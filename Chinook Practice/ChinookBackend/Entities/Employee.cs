@@ -8,14 +8,17 @@ using System.Threading.Tasks;
 
 namespace ChinookBackend.Entities
 {
-    [Table("Customer")]
-    public class Customer
+    [Table("Employee")]
+    public class Employee
     {
         [Key]
-        public int CustomerId { get; set; }
-        public string FirstName { get; set; }
+        public int EmployeeId { get; set; }
         public string LastName { get; set; }
-        public string Company { get; set; }
+        public string FirstName { get; set; }
+        public string Title { get; set; }
+        public int ReportsTo { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime HireDate { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
@@ -24,15 +27,16 @@ namespace ChinookBackend.Entities
         public string Phone { get; set; }
         public string Fax { get; set; }
         public string Email { get; set; }
-        public int SupportRepid { get; set; }
 
-        #region Navigational Property
+        #region Navigational Properties
+        [ForeignKey("ReportsTo")]
+        public virtual Employee Manager { get; set; }
+        public virtual ICollection<Employee> Subbordinates { get; set; }
+        = new HashSet<Employee>();
 
-        public virtual ICollection<Invoice> Invoices { get; set; }
-         = new HashSet<Invoice>();
-        public virtual Employee Employee { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
+            = new HashSet<Customer>();
+
         #endregion
     }
-
-
 }

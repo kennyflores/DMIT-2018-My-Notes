@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ChinookBackend.Entities
 {
-    [Table("Invoices")]
+    [Table("Invoice")]
     public class Invoice
     {
         [Key]
@@ -21,5 +21,12 @@ namespace ChinookBackend.Entities
         public string BillingCountry{ get; set; }
         public string BillingPostalCode { get; set; }
         public decimal Total { get; set; }
+
+        #region Navigational Properties
+
+        public virtual Customer Customer { get; set; }
+        public virtual ICollection<InvoiceLine> InvoiceLines { get; set; }
+         = new HashSet<InvoiceLine>();
+        #endregion
     }
 }
