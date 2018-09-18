@@ -28,6 +28,9 @@ namespace ChinookBackend.Entities
         public string Fax { get; set; }
         public string Email { get; set; }
 
+        [NotMapped]
+        public string FullAddress => $"{Address}, {City} {State}";
+
         #region Navigational Properties
         [ForeignKey("ReportsTo")]
         public virtual Employee Manager { get; set; }
