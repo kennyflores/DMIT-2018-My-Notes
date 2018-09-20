@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,9 +52,9 @@
   <ItemGroup>
     <Compile Include="BLL\ArtistController.cs" />
     <Compile Include="BLL\EmployeeController.cs" />
-    <Compile Include="DAL\ChinookContext.cs" />
     <Compile Include="Entities\Album.cs" />
     <Compile Include="Entities\Artist.cs" />
+    <Compile Include="DAL\ChinookContext.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Genre.cs" />
@@ -60,7 +62,7 @@
     <Compile Include="Entities\InvoiceLine.cs" />
     <Compile Include="Entities\MediaType.cs" />
     <Compile Include="Entities\Playlist.cs" />
-    <Compile Include="Entities\PlaylistTrack.cs" />
+    <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="Entities\Track.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
